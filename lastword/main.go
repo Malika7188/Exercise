@@ -6,24 +6,24 @@ import (
 )
 
 func main() {
-	args := os.Args[1]
+	// args := os.Args[1]
 
-	if len(os.Args) == 1 || len(os.Args) > 2 {
-		return
-	}
-	word := ""
+	// if len(os.Args) == 1 || len(os.Args) > 2 {
+	// 	return
+	// }
+	// word := ""
 
 
-	for i := len(args)-1; i > 0; i--{
-		if word == " " && string(args[i]) == " " {
-			continue
-		}
-		if word != " " && string(args[i]) == " " {
-			break
-		}
-		word = string(args[i]) + word
-	}
-	fmt.Println(word)
+	// for i := len(args)-1; i > 0; i--{
+	// 	if word == " " && string(args[i]) == " " {
+	// 		continue
+	// 	}
+	// 	if word != " " && string(args[i]) == " " {
+	// 		break
+	// 	}
+	// 	word = string(args[i]) + word
+	// }
+	// fmt.Println(word)
 
 	// for args[len(args)-1] == ' ' {
 	// 	args = args[:len(args)-1]
@@ -37,4 +37,22 @@ func main() {
 	// }
 
 	// fmt.Println(word)
+
+	args := os.Args[1]
+
+	if len(os.Args) == 1 {
+		return
+	}
+	word := ""
+
+	for i := len(args)-1; i > 0; i-- {
+		if word == " " && string(args[i]) == " " {
+			continue
+		}
+		if word != " " && string(args[i]) == " " {
+			break
+		}
+		word = string(args[i]) + word
+	}
+	fmt.Println(word)
 }

@@ -8,11 +8,14 @@ import (
 
 func main() {
 	args := os.Args[1:]
-
-	if len(args) == 0 {
+	
+	if len(args) != 2 {
 		return
 	}
-	for _, char := range args[0] {
+
+	lastArgs := args[len(args)-1]
+
+	for _, char := range lastArgs {
 		z01.PrintRune(char)
 	}
 	z01.PrintRune('\n')
